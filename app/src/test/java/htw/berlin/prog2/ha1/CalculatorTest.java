@@ -95,9 +95,9 @@ class CalculatorTest {
     public void testPressClearKey() {
         // beispieloperation, damit bildschirm einen wert hat den man zurücksetzen kann
         Calculator calc = new Calculator();
-        calc.pressDigitKey(5);
+        calc.pressDigitKey(4);
         calc.pressBinaryOperationKey("+");
-        calc.pressDigitKey(3);
+        calc.pressDigitKey(5);
         calc.pressEqualsKey();
 
         // Drückt die Clear-Taste und überprüfe, ob der Bildschirm auf 0 zurückgesetzt wird
