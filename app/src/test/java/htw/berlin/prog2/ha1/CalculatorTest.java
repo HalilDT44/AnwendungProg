@@ -113,7 +113,7 @@ class CalculatorTest {
         calc.pressDigitKey(0);
         calc.pressUnaryOperationKey("1/x");
 
-        String expected = "Infinity";
+        String expected = "Error";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
@@ -127,7 +127,7 @@ class CalculatorTest {
         calc.pressDigitKey(0);
         calc.pressUnaryOperationKey("ln");
 
-        String expected = "-Infinity";
+        String expected = "Error";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
