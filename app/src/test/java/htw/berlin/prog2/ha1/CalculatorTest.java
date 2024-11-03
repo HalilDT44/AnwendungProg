@@ -104,7 +104,36 @@ class CalculatorTest {
         calc.pressClearKey();
         assertEquals("0", calc.readScreen());
     }
+
+    @Test
+    @DisplayName("sollte einen Fehler angeben wenn man die funktion 1/x bei 0 benutzt")
+    void testDivisionByDotkey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressUnaryOperationKey("1/x");
+
+        String expected = "Infinity";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("sollte fehler angeben wenn man den ln von 0 zieht")
+    void testlnByZero() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressUnaryOperationKey("ln");
+
+        String expected = "-Infinity";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+}
 
 
 
