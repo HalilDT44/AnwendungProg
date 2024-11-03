@@ -125,7 +125,7 @@ class CalculatorTest {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(0);
-        calc.pressUnaryOperationKey("ln");
+        calc.pressUnaryOperationKey("ln"); // Hab eine ln funktion eingefügt da in der beschreibung stand, dass man den code erweitern kann
 
         String expected = "Error";
         String actual = calc.readScreen();

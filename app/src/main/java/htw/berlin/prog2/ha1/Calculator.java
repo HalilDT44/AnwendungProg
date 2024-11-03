@@ -77,22 +77,8 @@ public class Calculator {
         var result = switch(operation) {
             case "√" -> Math.sqrt(Double.parseDouble(screen));
             case "%" -> Double.parseDouble(screen) / 100;
-            case "1/x" -> {
-                if (latestValue == 0) {
-                    screen = "Error";
-                    yield Double.NaN;
-                } else {
-                    yield 1 / latestValue;
-                }
-            }
-            case "ln" -> {
-                if (latestValue <= 0) {
-                    screen = "Error";
-                    yield Double.NaN;
-                } else {
-                    yield Math.log(latestValue);
-                }
-            }
+            case "1/x" -> 1 / Double.parseDouble(screen);
+            case "ln" -> Math.log(Double.parseDouble(screen));
             default -> throw new IllegalArgumentException();
         };
         screen = Double.toString(result);
